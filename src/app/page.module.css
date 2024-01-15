@@ -1,0 +1,55 @@
+.hipertensioscanLogo {
+  width: 5em;
+  height: 5em;
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.fullBoxApp {
+  color:  rgb(153, 153, 153);
+  background-color: #f0f4f5;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  height: 17vh;
+}
+
+.headerTitleContainer {
+  color: #2e2e2e;
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 1120px) {
+
+  .hipertensioscanLogo {
+    width: 4em;
+    height: 4em;
+  }
+
+  .headerContainer {
+    height: 10vh;
+  }
+
+  .fullBoxApp {
+    font-size: 0.6em;
+    flex: 1;
+  }
+}

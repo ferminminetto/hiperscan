@@ -1,0 +1,62 @@
+.calculatorContainer {
+  padding: 2em 1em;
+  min-height: 83vh;
+}
+
+.resultBox {
+  text-align: center;
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 2em;
+  background: #697482;
+  background: #66afad;
+  color: white;
+  padding: 1.5em 1.5em;
+  border-radius: 5px;
+  font-weight: 400;
+  transition: background-color 0.7s ease;
+}
+
+.resultText {
+  font-weight: 900;
+  font-size: 32px;
+  color: var(--white);
+}
+
+.riskResult {
+  background-color: #ba4949;
+}
+
+.noRiskResult {
+  background-color: #4c9148;
+}
+
+.probabilityBox {
+  margin-top: 1em;
+  margin-top: 28px;
+  padding: 18px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(255 255 255 / 11%);
+  font-weight: 200;
+  font-size: 0.8em;
+  font-family: "Roboto";
+}
+
+@media (min-width: 0px) and (max-width: 1120px) {
+  .calculatorContainer {
+    min-height: 90vh;
+  }
+  .allInputsContainer { 
+  }
+  .formGridContainer {
+    font-size: 0.7em;
+  }
+  .resultBox {
+    width: 100%;
+  }
+}

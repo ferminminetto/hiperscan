@@ -1,0 +1,46 @@
+.aboutContainer h1 {
+  color: #00aad2;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+.aboutContainer h2 {
+  font-weight: 400;
+  color: #2e2e2e;
+  margin-top: 1em;
+}
+
+.aboutContainer h2::after {
+  content: "";
+  display: block;
+  width: 24px;
+  border-bottom: 4px solid #66afad;
+  margin-top: 8px;
+  margin-bottom: 0.5em;
+}
+
+.aboutContainer p {
+  margin-bottom: 0.5em;
+  font-size: 0.85em;
+  font-weight: 300;
+  color: gray;
+}
+
+.aboutContainer {
+  margin-bottom: 3em;
+}
+
+@media (min-width: 0px) and (max-width: 1120px) {
+
+  .aboutContainer h1 {
+    font-size: 1.5em;
+  }
+
+  .aboutContainer h2 {
+    font-size: 1em;
+  }
+
+  .aboutContainer p {
+    font-size: 0.65em;
+  }
+
+}
