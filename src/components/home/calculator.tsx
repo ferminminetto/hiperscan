@@ -10,6 +10,14 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import ErrorMessage from '../common/ErrorMessage';
 
+type ErrorsType = {
+  cintura?: string;
+  presionArterial?: string;
+  presionPulso?: string;
+  sexo?: string;
+  [key: string]: string | undefined;
+}
+
 const Calculator = () => {
 
   const [cintura, setCintura] = useState<string>('');
@@ -18,7 +26,7 @@ const Calculator = () => {
   const [sexo, setSexo] = useState<string>('');
   const [hipertensionProbabilityValue, setHipertensionProbabilityValue] = useState<number>(0);
   const [hipertensionProbability, setHipertensionProbability] = useState<boolean | undefined>(undefined);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<ErrorsType>({});
 
   useEffect(() => {
     if (isNumeric(cintura) && isNumeric(presionArterial) && isNumeric(presionPulso) && sexo !== '') {
@@ -44,7 +52,7 @@ const Calculator = () => {
       }
     }
     if (!errorFound) {
-      let errorsWithout = {
+      let errorsWithout: ErrorsType = {
         ...errors
       };
       delete errorsWithout[fieldName];

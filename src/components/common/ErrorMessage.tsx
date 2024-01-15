@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import ReportIcon from '@mui/icons-material/Report';
 
 type ErrorMessageProps = {
-  message: string;
+  message: string | undefined;
 }
 
 const ErrorMessage = ({ message }: ErrorMessageProps) => {
