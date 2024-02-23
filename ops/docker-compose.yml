@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  frontend:
+    image: node:latest
+    command: sh /app/ops/frontend_start.sh
+    volumes:
+      - ../:/app
+    ports:
+      - 3001:3000
