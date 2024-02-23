@@ -62,17 +62,14 @@ const Calculator = () => {
 
   useEffect(() => {
     validateFieldInRange("presionPulso", presionPulso, 15, 70);
-    console.log(errors);
   }, [presionPulso])
 
   useEffect(() => {
     validateFieldInRange("cintura", cintura, 36, 198);
-    console.log(errors);
   }, [cintura])
 
   useEffect(() => {
     validateFieldInRange("presionArterial", presionArterial, 50, 89);
-    console.log(errors);
   }, [presionArterial])
 
   const isNumeric = (str: string) => {
@@ -101,28 +98,33 @@ const Calculator = () => {
   }
 
   const probabilityOfHipertension = () => {
-    // Intercepto Inicial
-    const b0 = -10.068962;
-    // Sexo
-    const b1 = 0.707707;
-    // Presion Arterial
-    const b2 = 0.079202;
+    const interceptoInicial = -10.068962;
+    const sexoBeta = 0.707707;
+    const presionArterialBeta = 0.079202;
     // Cintura
-    const b3 = 0.018968;
+    const cinturaBeta = 0.018968;
     // Presion Pulso
-    const b4 = 0.023772;
+    const presionPulsoBeta = 0.023772;
 
     // Should be 1 for male, and 0 for female.
-    const x1Num = (sexo === 'male') ? 1 : 0;
-    const x2Num = parseInt(presionArterial);
-    const x3Num = parseInt(cintura);
-    const x4Num = parseInt(presionPulso);
+    const sexoInt = (sexo === 'male') ? 1 : 0;
+    const presionArterialInt = parseInt(presionArterial);
+    const cinturaInt = parseInt(cintura);
+    const presionPulsoInt = parseInt(presionPulso);
 
     // Calcula el logaritmo natural de la odds ratio
-    const lnOddsRatio = b0 + b1 * x1Num + b2 * x2Num + b3 * x3Num + b4 * x4Num;
+    console.clear();
+    console.log(`Calculo: ${interceptoInicial} + (${sexoBeta} * ${sexoInt}) + (${presionArterialBeta} * ${presionArterialInt}) + 
+      (${cinturaBeta} * ${cinturaInt}) + (${presionPulsoBeta} * ${presionPulsoInt})`);
+    const lnOddsRatio = interceptoInicial + (sexoBeta * sexoInt) + (presionArterialBeta * presionArterialInt) + 
+      (cinturaBeta * cinturaInt) + (presionPulsoBeta * presionPulsoInt);
+    
+    console.log(`Resultado = ${lnOddsRatio}`);
 
     // Calcula la probabilidad de que ocurra el evento
-    const probabilityOfHipertensionResult = 1 / (1 + Math.exp(lnOddsRatio));
+    const probabilityOfHipertensionResult = 1 / (1 + Math.exp(-1 * lnOddsRatio));
+    console.log(`Calculo = 1 / (1 + e^(-1 * ${lnOddsRatio}))`)
+    console.log(`Resultado Final: ${probabilityOfHipertensionResult}`);
     return probabilityOfHipertensionResult;
   }
 
