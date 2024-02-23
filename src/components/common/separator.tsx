@@ -4,7 +4,7 @@ const Separator = () => {
 
   return (
     <div style={{
-        height: "5em",
+        height: "2em",
         background: "#66afad",
         margin: "1.5em 0px",
     }}>
