@@ -1,6 +1,8 @@
 .hipertensioscanLogo {
   width: 5em;
   height: 5em;
+  max-height: 17vh;
+  margin-right: 1.5em;
 }
 
 
@@ -9,14 +11,15 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
 }
 
 .fullBoxApp {
-  color:  rgb(153, 153, 153);
-  background-color: #f0f4f5;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 244, 245, 1) 40%);
   font-size: 1em;
   font-weight: 300;
 }
@@ -40,8 +43,9 @@
 @media (min-width: 0px) and (max-width: 1120px) {
 
   .hipertensioscanLogo {
-    width: 4em;
-    height: 4em;
+    width: 4.5em;
+    height: 4.5em;
+    max-height: 5em;
   }
 
   .headerContainer {

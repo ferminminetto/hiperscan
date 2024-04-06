@@ -113,18 +113,12 @@ const Calculator = () => {
     const presionPulsoInt = parseInt(presionPulso);
 
     // Calcula el logaritmo natural de la odds ratio
-    console.clear();
-    console.log(`Calculo: ${interceptoInicial} + (${sexoBeta} * ${sexoInt}) + (${presionArterialBeta} * ${presionArterialInt}) + 
-      (${cinturaBeta} * ${cinturaInt}) + (${presionPulsoBeta} * ${presionPulsoInt})`);
     const lnOddsRatio = interceptoInicial + (sexoBeta * sexoInt) + (presionArterialBeta * presionArterialInt) + 
       (cinturaBeta * cinturaInt) + (presionPulsoBeta * presionPulsoInt);
     
-    console.log(`Resultado = ${lnOddsRatio}`);
 
     // Calcula la probabilidad de que ocurra el evento
     const probabilityOfHipertensionResult = 1 / (1 + Math.exp(-1 * lnOddsRatio));
-    console.log(`Calculo = 1 / (1 + e^(-1 * ${lnOddsRatio}))`)
-    console.log(`Resultado Final: ${probabilityOfHipertensionResult}`);
     return probabilityOfHipertensionResult;
   }
 
@@ -165,7 +159,8 @@ const Calculator = () => {
             </Grid>
 
             <Grid item md={6} xs={12}>
-              <TextField id="outlined-basic" label="PAD Cintura" placeholder="Ingrese un número"
+              {/* <img src="/public/form_icons/cintura.jpg" alt="Cintura" /> */}
+              <TextField id="outlined-basic" label="Cm de Cintura" placeholder="Ingrese un número"
                 variant="standard"
                 sx={{ width: '70%' }}
                 InputProps={{ sx: { height: 30, fontSize: 20 } }}

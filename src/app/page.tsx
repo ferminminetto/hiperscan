@@ -13,7 +13,7 @@ export default function Home() {
           <div className={styles.headerContainer}>
             <div>
               <Image
-                src="/hipertensioscan-logo.png"
+                src="/logo.jpg"
                 alt="Hipertensioscan Logo"
                 className={styles.hipertensioscanLogo}
                 width={100}
